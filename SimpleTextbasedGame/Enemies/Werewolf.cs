@@ -32,8 +32,7 @@ namespace SimpleTextbasedGame.Enemies
             if (Health <= 0)
                 Console.WriteLine("You killed it!");
             else
-            Console.WriteLine($"A fine hit! The Werewolf has {Health} health left.");
-            //return $"I currently have {Health} health";
+                Console.WriteLine($"A fine hit! The Werewolf has {Health} health left.");
         }
     }
 }

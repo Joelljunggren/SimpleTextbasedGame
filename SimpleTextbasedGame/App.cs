@@ -45,27 +45,38 @@ public class App
             Console.WriteLine("QUEUE INTENSE BOSS MUSIC!\n");
             while (werewolf.Health >= 0 && player.Health >= 0)
             {
-                Convert.ToInt32(player.AttackChance());
-                if (player.AttackChance() <= 5)
-                    Console.WriteLine("You missed, how tragic!\n");
-                else
+                if(player.Health > 0)
                 {
-                    werewolf.Health -= player.Damage;
-                    werewolf.ShowHealth();
-                    Console.WriteLine();
+                    Convert.ToInt32(player.AttackChance());
+                    if (player.AttackChance() <= 5)
+                        Console.WriteLine("You missed, how tragic!\n");
+                    else
+                    {
+                        werewolf.Health -= player.Damage;
+                        werewolf.ShowHealth();
+                        Console.WriteLine();
+                    }
                 }
-                Convert.ToInt32(werewolf.AttackChance());
-                if (werewolf.AttackChance() <= 5)
-                    Console.WriteLine("The werewolf swipes, and misses!\n");
-                else
+                if (werewolf.Health > 0)
                 {
-                    player.Health -= werewolf.Damage;
-                    player.ShowHealth();
-                    Console.WriteLine();
+                    Convert.ToInt32(werewolf.AttackChance());
+                    if (werewolf.AttackChance() <= 5)
+                        Console.WriteLine("The werewolf swipes, and misses!\n");
+                    else
+                    {
+                        player.Health -= werewolf.Damage;
+                        player.ShowHealth();
+                        Console.WriteLine();
+                    }
                 }
             }
             Console.WriteLine("The battle is over!");
             Console.WriteLine($"You survived with {player.Health} health left.");
         }
+    }
+
+    public void BattleScenario()
+    {
+        //Not sure if I should put the entire if/else thing from attackWerewolf in here instead
     }
 }
