@@ -102,18 +102,6 @@ public class App
             Console.WriteLine("The battle is over!");
             Console.WriteLine($"You survived with {player.Health} health left.\n");
             DrinkHealingPotion();
-            //Console.Write("Drink a health potion? Yes/no: ");
-            //var healing = Console.ReadLine();
-            //if (healing == "yes")
-            //{
-            //    player.HealthPotions -= 1;
-            //    player.Health += 25;
-            //    Console.WriteLine($"You heal yourself up to {player.Health} and have {player.HealthPotions} potions left.");
-            //}
-            //if(healing  == "no")
-            //{
-            //    Console.WriteLine($"You stay at {player.Health} and keep moving forward.");
-            //}
         }
     }
 
