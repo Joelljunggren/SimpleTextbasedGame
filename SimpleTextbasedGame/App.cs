@@ -9,16 +9,22 @@ public class App
     public void Run()
     {
         Zombie zombie = new Zombie();
-        //PlayerClass player = new PlayerClass();
 
         Console.Write("Enter your name: ");
         player.Name = Console.ReadLine();
-        Console.WriteLine("You reach a fork in the road, will you go left or right?");
+        Console.Write("You reach a fork in the road, will you go left or right?: ");
         var whereToGo = Console.ReadLine().ToLower();
         if (whereToGo == "left")
             GoingLeft();
-        //if (whereToGo == "right")
-        //    GoingRight();
+        if (whereToGo == "right")
+            GoingRight();
+    }
+
+    public void GoingRight()
+    {
+        Console.Clear();
+        Console.WriteLine("You faceplant straight into a wall and pass out.");
+        Environment.Exit(0);
     }
     public void GoingLeft()
     {
@@ -47,6 +53,8 @@ public class App
             {
                 if(player.Health > 0)
                 {
+                    Console.WriteLine("You raise your sword and...");
+                    Thread.Sleep(1000);
                     Convert.ToInt32(player.AttackChance());
                     if (player.AttackChance() <= 5)
                         Console.WriteLine("You missed, how tragic!\n");
@@ -59,9 +67,11 @@ public class App
                 }
                 if (werewolf.Health > 0)
                 {
+                    Console.WriteLine("There werewolf swipes...");
+                    Thread.Sleep(1000);
                     Convert.ToInt32(werewolf.AttackChance());
                     if (werewolf.AttackChance() <= 5)
-                        Console.WriteLine("The werewolf swipes, and misses!\n");
+                        Console.WriteLine("And misses!\n");
                     else
                     {
                         player.Health -= werewolf.Damage;
