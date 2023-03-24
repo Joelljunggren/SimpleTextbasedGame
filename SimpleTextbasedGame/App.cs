@@ -45,7 +45,7 @@ public class App
         Console.Write("\nWill you attack this ferocious werewolf? Yes/No: ");
         var choice = Console.ReadLine().ToLower();
         if (choice == "yes")
-            AttackWerewolf();
+            BattleScenarioOne();
         //if no gör någonting annat tråkigt
     }
 
@@ -55,7 +55,7 @@ public class App
         Console.WriteLine("You enter the ether, there is nothing here. Everything is blank");
     }
 
-    public void AttackWerewolf()
+    public void BattleScenarioOne()
     {
         Console.Clear();
         Werewolf werewolf = new Werewolf();
@@ -102,6 +102,7 @@ public class App
             player.DrinkHealingPotion();
 
             //Unsure of what to do right here, return somewhere or another method for KeepGoing()
+            //would you like to keep moving should be a method to follow DRY principles
             Console.Write("Would you like to keep moving? Yes/no: ");
             Console.ReadLine();
         }
@@ -109,8 +110,8 @@ public class App
 
 
     //Maybe I should go for battlescenario1,2,3 or something instead of just attackWerewolf?
-    public void BattleScenario()
+    public void BattleScenarioTwo()
     {
-
+        //zombie eller något annat sådant skit
     }
 }

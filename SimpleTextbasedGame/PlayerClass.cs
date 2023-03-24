@@ -68,7 +68,7 @@ namespace SimpleTextbasedGame
             }
             if (healing == "no")
             {
-                Console.WriteLine($"You stay at {Health} and keep moving forward.");
+                Console.WriteLine($"You decide that {Health} health is enough.");
             }
 
         }
