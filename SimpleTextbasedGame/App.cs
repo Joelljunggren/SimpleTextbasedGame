@@ -113,7 +113,4 @@ public class App
     {
 
     }
-
-    //I could probably make a method for asking if I would like to heal up or not
-    }
 }
