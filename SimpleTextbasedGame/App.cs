@@ -26,7 +26,6 @@ public class App
     {
         Console.Clear();
         Console.WriteLine("You faceplant straight into a tree and pass out.");
-
         Console.WriteLine("Try again?: Yes/No");
         var choice = Console.ReadLine().ToLower();
         if (choice == "yes")
@@ -46,7 +45,11 @@ public class App
         var choice = Console.ReadLine().ToLower();
         if (choice == "yes")
             BattleScenarioOne();
-        //if no gör någonting annat tråkigt
+        if(choice == "no")
+        {
+            Console.Clear();
+            Console.WriteLine("Coward, im shutting the game down.");
+        }
     }
 
     public void GoingRight()
