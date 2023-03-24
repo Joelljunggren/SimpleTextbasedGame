@@ -9,7 +9,7 @@ public class App
     public void Run()
     {
         Zombie zombie = new Zombie();
-
+        Console.Clear();
         Console.Write("Enter your name: ");
         player.Name = Console.ReadLine();
         Console.Write("You reach a fork in the road, will you go left or right?: ");
@@ -24,7 +24,17 @@ public class App
     {
         Console.Clear();
         Console.WriteLine("You faceplant straight into a wall and pass out.");
-        Environment.Exit(0);
+
+        Console.WriteLine("Try again?: Yes/No");
+        var choice = Console.ReadLine().ToLower();
+        if (choice == "yes")
+            Run();
+        else
+        {
+            Console.Clear();
+            Console.WriteLine("Fine, I didnt want you to play anyways...");
+            Environment.Exit(0);
+        }
     }
     public void GoingLeft()
     {
