@@ -12,18 +12,20 @@ public class App
         Console.Clear();
         Console.Write("Enter your name: ");
         player.Name = Console.ReadLine();
-        Console.Write("You reach a fork in the road, will you go left or right?: ");
+        Console.Write("The road splits into three, where will you go? Left/Right/Straight: ");
         var whereToGo = Console.ReadLine().ToLower();
         if (whereToGo == "left")
             GoingLeft();
+        if (whereToGo == "straight")
+            GoingStraight();
         if (whereToGo == "right")
             GoingRight();
     }
 
-    public void GoingRight()
+    public void GoingStraight()
     {
         Console.Clear();
-        Console.WriteLine("You faceplant straight into a wall and pass out.");
+        Console.WriteLine("You faceplant straight into a tree and pass out.");
 
         Console.WriteLine("Try again?: Yes/No");
         var choice = Console.ReadLine().ToLower();
@@ -39,11 +41,18 @@ public class App
     public void GoingLeft()
     {
         Console.Clear();
-        Console.WriteLine("You stumble upon a werewolf, having some tea, minding its own bussiness.");
-        Console.Write("\nWill you attack this curious tea-drinking werewolf? Yes/No: ");
+        Console.WriteLine("You stumble upon a werewolf, minding its own bussiness.");
+        Console.Write("\nWill you attack this ferocious werewolf? Yes/No: ");
         var choice = Console.ReadLine().ToLower();
         if (choice == "yes")
             AttackWerewolf();
+        //if no gör någonting annat tråkigt
+    }
+
+    public void GoingRight()
+    {
+        Console.Clear();
+        Console.WriteLine("You enter the ether, there is nothing here. Everything is blank");
     }
 
     public void AttackWerewolf()
@@ -91,12 +100,45 @@ public class App
                 }
             }
             Console.WriteLine("The battle is over!");
-            Console.WriteLine($"You survived with {player.Health} health left.");
+            Console.WriteLine($"You survived with {player.Health} health left.\n");
+            DrinkHealingPotion();
+            //Console.Write("Drink a health potion? Yes/no: ");
+            //var healing = Console.ReadLine();
+            //if (healing == "yes")
+            //{
+            //    player.HealthPotions -= 1;
+            //    player.Health += 25;
+            //    Console.WriteLine($"You heal yourself up to {player.Health} and have {player.HealthPotions} potions left.");
+            //}
+            //if(healing  == "no")
+            //{
+            //    Console.WriteLine($"You stay at {player.Health} and keep moving forward.");
+            //}
         }
     }
 
+
+    //Maybe I should go for battlescenario1,2,3 or something instead of just attackWerewolf?
     public void BattleScenario()
     {
-        //Not sure if I should put the entire if/else thing from attackWerewolf in here instead
+
+    }
+
+    //I could probably make a method for asking if I would like to heal up or not
+    public void DrinkHealingPotion()
+    {
+        Console.Write("Drink a health potion? Yes/no: ");
+        var healing = Console.ReadLine();
+        if (healing == "yes")
+        {
+            player.HealthPotions -= 1;
+            player.Health += 25;
+            Console.WriteLine($"You heal yourself up to {player.Health} and have {player.HealthPotions} potions left.");
+        }
+        if (healing == "no")
+        {
+            Console.WriteLine($"You stay at {player.Health} and keep moving forward.");
+        }
+        //Next battle scenario method goes here
     }
 }

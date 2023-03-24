@@ -11,12 +11,14 @@ namespace SimpleTextbasedGame
         public string Name { get; set; }
         public int Health { get; set; }
         public int Damage { get; set; }
+        public int HealthPotions { get; set; }
 
         public PlayerClass()
         {
             //Ska ändra i app sen så att man kan skapa sina egna karaktärer
             Health = 100;
             Damage = 25;
+            HealthPotions = 5;
         }
 
         public void PlayerMonologue()
